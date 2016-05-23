@@ -1,0 +1,17 @@
+<FILES .htaccess>
+order allow,deny 
+deny from all
+</FILES>
+
+#php_flag session.use_only_cookies on
+#php_value session.cookie_lifetime 3600
+
+<Files config.php>
+  deny from all
+</Files>
+
+#RewriteRule ^(.*)\$ $1.php [L]
+
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^www.multiservice.pp.ua$ [NC]
+#RewriteRule ^(.*)$ http://multiservice.pp.ua/$1 [R=301,L]

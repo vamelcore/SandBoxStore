@@ -1,0 +1,21 @@
+<FILES .htaccess>
+order allow,deny 
+deny from all
+</FILES>
+
+# File modified on Sat Oct 20 03:18:16 2012 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_flag session.use_only_cookies on
+# File modified on Sat Oct 20 03:18:18 2012 by server
+# For security reasons, mod_php is not used on this server. Use a php.ini file for php directives
+# php_value session.cookie_lifetime 3600
+
+<Files config.php>
+  deny from all
+</Files>
+
+RewriteRule ^(.*)\$ $1.php [L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.multiservice.ua$ [NC]
+RewriteRule ^(.*)$ http://multiservice.ua/$1 [R=301,L]
